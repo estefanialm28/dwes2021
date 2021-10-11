@@ -1,34 +1,28 @@
 
 <?php
+ 
+ $navegador = $_SERVER['HTTP_USER_AGENT'];
+ 
+ $content = "";
+ $title = "";
+  
+ if (strpos($navegador , 'Firefox') === FALSE){
+  
+    $title = "Change the navigator";
+  
+    $content = "No es compatible con este navegador";
+  
+  
+ }else{
+   
+   
+    $content = "Página web";
+   
+    $title = "Bienvenidos/as";
+  
+ }
+ 
 
-$language = $_COOKIE['LanguageCookie'] ?? "" ;
-$getSetLanguage = $_GET['setLanguage'] ?? 'es';
- 
- 
- 
-   if($getSetLanguage == 'es'){
- 
-       $language = 'es';
- 
-       $content = "Esta página está en Castellano (Idioma por defecto)";
-      
-       $title = "Cambiar el idioma de la página";
- 
-   }else if( $getSetLanguage == 'en'){
- 
-       $language = 'en';
-      
-       $content = "This page is in English";
- 
-       $title = "Change the language of the page";
-          
-       }
- 
- 
-  
-   setcookie("LanguageCookie", $language);
-  
- 
 ?>
 
 
@@ -42,7 +36,7 @@ $getSetLanguage = $_GET['setLanguage'] ?? 'es';
 
     <title><?= $title ?></title>
 
-    <meta name="author" content="Víctor Ponz">
+    <meta name="author" content="Estefanía Leal">
 
 </head>    
 
